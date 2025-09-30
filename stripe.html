@@ -52,38 +52,48 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<center><h1>Stripe Project</h1></center>
-				<span class="image main"><img src="images/stripe.JPG" alt="" /></span>
-				<center><h1>Sales Analytics Dashboard - Analiza transakcji Stripe</h1></center>
-
-				<h2>Kontekst projektu</h2>
-				<p>Dashboard analityczny stworzony w celu analizy dodatkowej sprzedaży realizowanej przez
-					platformę Stripe i aplikację Spacebring. Projekt koncentruje się na identyfikacji kluczowych wzorców
+				<center>
+					<h1>Stripe Project</h1>
+				</center>
+				<span class="image main"><img src="images/stripe.jpg" alt="" /></span>
+				
+					<h1>Sales Analytics Dashboard - Analiza transakcji Stripe</h1>
+				
+				
+					<h2>Cel Projektu</h2>
+				
+				<p>Dashboard został stworzony w celu analizy dodatkowej sprzedaży realizowanej przez aplikację
+					Spacebring.
+					Projekt koncentruje się na identyfikacji kluczowych wzorców
 					sprzedażowych, analizie prowizji oraz optymalizacji operacyjnej na podstawie 17 miesięcy danych
-					transakcyjnych (ponad 690 zamówień).</p>
-				<h2>Moja rola</h2>
-				<p>Data Analytics Portfolio Project | Luty - Marzec 2025</p>
-				<p>Samodzielna realizacja projektu od koncepcji przez modelowanie danych po finalną wizualizację.</p>
-				<h2>Technologie</h2>
+					transakcyjnych z platformy Stripe.</p>
+
+				
+					<h2>Technologie i narzędzia użyte w Projekcie</h2>
+				
 				<div>
-					<strong>Excel, Power Pivot, Power Query, VBA (makra)</strong>
-				</div>
-				<h2>Wyzwanie</h2>
-				<p>Głównym wyzwaniem była transformacja surowych danych transakcyjnych w funkcjonalny model analityczny.
-					Dane wymagały:</p>
+					MS Excel, Power Pivot, Power Query, VBA Macros, DAX
+				</div><br>
+				
+					<h2>Krok po kroku :</h2>
+				
 				<ul>
-					<li><strong>Standaryzacji formatów dat</strong> - różne formaty (05.02.2025 vs 2025/05/02) wymagały
-						zaawansowanej transformacji w Power Query</li>
-					<li><strong>Normalizacji struktury danych</strong> - dekompozycja surowych danych na model gwiazdy z
-						tabelą faktów (Sales_Data, Refunds) i wymiarami (Calendar, Customer_Info)</li>
-					<li><strong>Anonimizacji danych wrażliwych</strong> - zastąpienie adresów email unikalnymi
-						identyfikatorami customer_id w Power Query</li>
-					<li><strong>Zaawansowanego modelowania</strong> - stworzenie 15+ miar DAX w Power Pivot (m.in. Total
-						Sales, Refund Rate, Average Order Price, Customer Ranking, porównania MoM)</li>
-					<li><strong>Zapewnienia pełnej interaktywności</strong> - integracja tabel przestawnych ze slicerami
-						Year/Month umożliwiająca drill-down</li>
+					<li>Przygotowanie i czyszczenie danych w <strong>Power Query</strong>, podział na cztery tabele (faktów i wymiarów.)
+					</li>
+					<li>Zbudowanie modelu danych w <strong>Power Pivot (model gwiazdy)</strong> oraz uporządkowanie relacji między
+						tabelami.</li>
+					<li>Utworzenie dedykowanego kontenera na miary i implementacja 17 miar w języku <strong>DAX</strong></li>
+					<li>Przygotowanie obszaru roboczego pod dashboard – stworzenie <strong>tabel przestawnych</strong> jako fundamentu
+						wizualizacji.</li>
+					<li>Stworzenie dwóch <strong>makr</strong> oraz nadanie ich na przyciski:</li>
+
+					Makro 1 – filtrujące dashboard w celu zaprezentowania ciekawego spostrzeżenia z analizy<br>
+						Makro 2 – czyszczące wszystkie filtry i przywracające widok początkowy.
+					<li>Finalna eksploracja dashboardu, dopracowanie estetyki, wyciągnięcie wniosków i przygotowanie
+						opisu.</li>
 				</ul>
-				<h2>Rozwiązanie</h2>
+
+				<h2>Wnioski / Spostrzeżenia</h2>
 				<ul>
 					<li><strong>Modelowanie danych:</strong> Zaprojektowałem model gwiazdy (star schema) w Power Pivot:
 						<ul>
@@ -141,6 +151,10 @@
 				</ul>
 				<p>Narzędzie jest szczególnie wartościowe dla działów sprzedaży i operacji w kontekście analizy
 					efektywności recepcji w generowaniu dodatkowych przychodów.</p>
+
+				</center>
+				<span class="image main"><img src="images/Dashboard1.png" alt="" /></span>
+				<center>
 			</div>
 		</div>
 
