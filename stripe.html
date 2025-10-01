@@ -45,7 +45,12 @@
 			<h2>Menu</h2>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="stripe.html">Stripe transaction analysis</a></li>
+				<span><center>Projekty</center></span>
+				<ul>
+						<li><a href="stripe.html">Stripe</a></li>
+					
+				</ul>
+				</li>
 			</ul>
 		</nav>
 
@@ -55,154 +60,79 @@
 				<center>
 					<h1>Stripe Project</h1>
 				</center>
-				<span class="image main"><img src="images/stripe.JPG" alt="" /></span>
-				
-					<h1>Sales Analytics Dashboard - Analiza transakcji Stripe</h1>
-				
-				
-					<h2>Cel Projektu</h2>
-				
+				<span class="image main"><img src="images/stripe.jpg" alt="" /></span>
+
+				<h1>Sales Analytics Dashboard - Analiza transakcji Stripe</h1>
+
+
+				<h2>Cel Projektu</h2>
+
 				<p>Dashboard został stworzony w celu analizy dodatkowej sprzedaży realizowanej przez aplikację
 					Spacebring.
 					Projekt koncentruje się na identyfikacji kluczowych wzorców
 					sprzedażowych, analizie prowizji oraz optymalizacji operacyjnej na podstawie 17 miesięcy danych
 					transakcyjnych z platformy Stripe.</p>
 
-				
-					<h2>Technologie i narzędzia użyte w Projekcie</h2>
-				
+
+				<h2>Technologie i narzędzia użyte w Projekcie</h2>
+
 				<div>
 					MS Excel, Power Pivot, Power Query, VBA Macros, DAX
 				</div><br>
-				
-					<h2>Krok po kroku :</h2>
-				
+
+				<h2>Krok po kroku :</h2>
+
 				<ul>
-					<li>Przygotowanie i czyszczenie danych w <strong>Power Query</strong>, podział na cztery tabele (faktów i wymiarów.)
+					<li>Przygotowanie i czyszczenie danych w <strong>Power Query</strong>, podział na cztery tabele
+						(faktów i wymiarów).
 					</li>
-					<li>Zbudowanie modelu danych w <strong>Power Pivot (model gwiazdy)</strong> oraz uporządkowanie relacji między
+					<li>Zbudowanie modelu danych w <strong>Power Pivot (model płatka śniegu)</strong> oraz uporządkowanie
+						relacji między
 						tabelami.</li>
-					<li>Utworzenie dedykowanego kontenera na miary i implementacja 17 miar w języku <strong>DAX</strong></li>
-					<li>Przygotowanie obszaru roboczego pod dashboard – stworzenie <strong>tabel przestawnych</strong> jako fundamentu
-						wizualizacji.</li>
+					<li>Utworzenie dedykowanego kontenera na miary i implementacja 17 miar w języku <strong>DAX</strong>.
+					</li>
+					<li>Przygotowanie obszaru roboczego pod dashboard – stworzenie <strong>tabel przestawnych</strong>
+						jako fundamentu
+						wizualizacji zapewniającego interaktywność.</li>
+						<li>Zaprojektowanie dashboardu - budowa wizualizacji oraz dodanie niestandardowych slicerów zapewniających intuicyjną eksplorację i filtrowanie danych.</li>
 					<li>Stworzenie dwóch <strong>makr</strong> oraz nadanie ich na przyciski:</li>
 
-					Makro 1 – filtrujące dashboard w celu zaprezentowania ciekawego spostrzeżenia z analizy<br>
-						Makro 2 – czyszczące wszystkie filtry i przywracające widok początkowy.
+					Makro 1 – filtrujące dashboard w celu zaprezentowania ciekawego spostrzeżenia z analizy.<br>
+					Makro 2 – czyszczące wszystkie filtry i przywracające widok początkowy.
 					<li>Finalna eksploracja dashboardu, dopracowanie estetyki, wyciągnięcie wniosków i przygotowanie
 						opisu.</li>
+					
 				</ul>
-
+				<center><p>Finalny obraz dashboardu</p></center>
+				<span class="image main"><img src="images/Dashboard1.png" alt="" /></span>	
+				
 				<h2>Wnioski / Spostrzeżenia</h2>
+				
 				<ul>
-					<li><strong>Modelowanie danych:</strong> Zaprojektowałem model gwiazdy (star schema) w Power Pivot:
-						<ul>
-							<li>Tabele faktów: Sales_Data (transakcje), Refunds (zwroty)</li>
-							<li>Tabele wymiarów: Calendar (hierarchia czasowa: Year → Quarter → Month → Week → Day),
-								Customer_Info (dane klientów)</li>
-							<li>Relacje jeden-do-wielu zapewniające optymalną wydajność</li>
-						</ul>
-					</li>
-					<li><strong>Power Query - ETL:</strong> Stworzyłem wieloetapowy proces transformacji (widoczny na
-						screenie: 20+ applied steps) obejmujący czyszczenie, standaryzację, usuwanie kolumn wrażliwych i
-						zmianę typów danych</li>
-					<li><strong>Miary biznesowe:</strong> Zbudowałem kompleksowy zestaw miar DAX:
-						<ul>
-							<li>Metryki podstawowe: Total Sales, Total Orders, Total Customers</li>
-							<li>Metryki zaawansowane: Refund Rate, Average Order Price, Customer Ranking</li>
-							<li>Analizy porównawcze: Previous Month Sales/Orders, % of Last Month</li>
-						</ul>
-					</li>
-					<li><strong>Automatyzacja VBA:</strong> Zaimplementowałem dwa makra:
-						<ul>
-							<li><strong>Insight Macro</strong> - automatyczne ustawienie filtrów prezentujących kluczowe
-								odkrycia (np. dominacja jednego klienta)</li>
-							<li><strong>Clear All Filters</strong> - reset widoku do stanu początkowego dla swobodnej
-								eksploracji</li>
-						</ul>
-					</li>
-					<li><strong>Wizualizacja:</strong> Dashboard oparty na tabelach przestawnych z wykresami słupkowymi,
-						liniowymi i KPI cards, z pełną responsywnością na slicery</li>
+					<li><strong>Jeden klient wygenerował ponad 60% przychodów</strong> w dwóch najlepszych miesiącach sprzedażowych (maj i wrzesień 2024), co wskazuje na dużą koncentrację przychodów i potencjalne ryzyko uzależnienia od pojedynczego klienta.</li>
+					<li><strong>Sprzedaż koncentruje się głównie w środku tygodnia (wtorek – środa).</strong> Wyjątkiem jest poniedziałek, którego wysoka wartość wynika z przychodów wygenerowanych przez jednego kluczowego klienta (patrz punkt 1).</li>
+					<li><strong>Stopa zwrotów utrzymuje się na niskim poziomie 2,30%</strong>, a w niektórych miesiącach wynosi 0%, co sugeruje wysoką satysfakcję klientów.</li>
+					<li>Brak powtarzalnych <strong>wzorców sprzedaży</strong> w danych z początku roku (np. marzec 2024 – 3 653 PLN vs marzec 2025 – 6 740 PLN) co utrudnia dokładne prognozowanie.</li>
+					<li><strong>Liczba transakcji silnie koreluje ze sprzedażą (podobne linie trendu na wykresach)</strong>, co wskazuje na stabilną średnią wartość zamówienia i potwierdza, że wzrost przychodów jest napędzany głównie przez większą liczbę zamówień.</li>
 				</ul>
-				<h2>Kluczowe insights</h2>
-				<ul>
-					<li><strong>Koncentracja przychodów:</strong> Jeden klient wygenerował 60%+ przychodów w dwóch
-						najlepszych miesiącach sprzedażowych (maj i wrzesień 2024)</li>
-					<li><strong>Wzorce tygodniowe:</strong> Poniedziałki generują 3x więcej sprzedaży niż piątki (17 593
-						PLN vs 5 788 PLN), środy i wtorki są również znacząco silniejsze</li>
-					<li><strong>Stabilna jakość transakcji:</strong> Stopa zwrotów utrzymuje się na niskim poziomie
-						2,30-2,60%, co wskazuje na wysoką satysfakcję klientów</li>
-					<li><strong>Brak sezonowości:</strong> Analiza rok-do-roku nie wykazuje powtarzalnych wzorców - np.
-						marzec 2024 (3 653 PLN) vs marzec 2025 (6 740 PLN) - co utrudnia prognozowanie</li>
-					<li><strong>Wartość przeciętnego zamówienia:</strong> AOV oscyluje między 105-140 PLN w zależności
-						od okresu</li>
-				</ul>
-				<h2>Potencjalne zastosowanie biznesowe</h2>
-				<p>Dashboard może wspierać decyzje dotyczące:</p>
-				<ul>
-					<li><strong>Optymalizacji operacyjnej</strong> - redukcja grafików recepcji w słabe dni
-						(piątki-niedziele) może obniżyć koszty bez wpływu na przychody</li>
-					<li><strong>Zarządzania klientami strategicznymi</strong> - identyfikacja VIP customers generujących
-						większość przychodów umożliwia dedykowaną obsługę i programy lojalnościowe</li>
-					<li><strong>Benchmarkingu efektywności</strong> - porównanie sprzedaży dodatkowej przez
-						Stripe/Spacebring z innymi kanałami dystrybucji</li>
-					<li><strong>Strategii cenowej</strong> - analiza Average Order Price i jej korelacji z dniami
-						tygodnia może pomóc w dynamicznym pricingu</li>
-				</ul>
-				<p>Narzędzie jest szczególnie wartościowe dla działów sprzedaży i operacji w kontekście analizy
-					efektywności recepcji w generowaniu dodatkowych przychodów.</p>
 
-				</center>
-				<span class="image main"><img src="images/Dashboard1.png" alt="" /></span>
-				<center>
+				<h2>Potencjalne zastosowanie biznesowe</h2>
+				<ul>
+					<li>Narzędzie jest szczególnie wartościowe dla działów sprzedaży i operacji w kontekście analizy
+					efektywności recepcji w generowaniu dodatkowych przychodów.</li>
+					<li>Dashboard może wspierać decyzje dotyczące optymalizacji operacyjnej - redukcja grafików recepcji w słabsze dni sprzedażowe (piątek)
+						 może obniżyć koszty bez wpływu na przychody.</li>
+					<li>Pomoc w identyfikacji kluczowych klientów generujących większość przychodów umożliwia dedykowaną obsługę i programy lojalnościowe.</li>
+					<li>Porównanie sprzedaży dodatkowej z innymi źródłami generowania przychodów.</li>
+					<li>Strategia cenowa- analiza średniej wartości zamówienia może pomóc w efektywnym i dynamicznym ustalaniu cen. </li>
+				</ul>
+				<span class="image main"><img src="images/dashboard2.png" alt="" /></span>
+				<span class="image main"><img src="images/Modeldanych.png" alt="" /></span>
+				<span class="image main"><img src="images/Miary.png" alt="" /></span>	
+				
 			</div>
 		</div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<section>
-					<h2>Get in touch</h2>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field half">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field half">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send" class="primary" /></li>
-						</ul>
-					</form>
-				</section>
-				<section>
-					<h2>Follow</h2>
-					<ul class="icons">
-						<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a>
-						</li>
-						<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a>
-						</li>
-						<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>
-						</li>
-						<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a>
-						</li>
-						<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-						<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-						<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</section>
-				<ul class="copyright">
-					<li>&copy; Untitled. All rights reserved</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</footer>
 
 	</div>
 
@@ -216,6 +146,7 @@
 </body>
 
 </html>
+
 
 
 
