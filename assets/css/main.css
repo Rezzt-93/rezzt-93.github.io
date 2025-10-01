@@ -200,7 +200,7 @@ input, select, textarea {
 		line-height: 1.5;
 		margin: 0 0 2em 0;
 		text-transform: uppercase;
-		letter-spacing: 0.35em;
+		letter-spacing: 0.05em;
 	}
 
 		h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2995,6 +2995,8 @@ input, select, textarea {
 		z-index: 10002;
 	}
 
+
+
 		#menu > .inner {
 			-moz-transition: opacity 0.45s ease;
 			-webkit-transition: opacity 0.45s ease;
@@ -3027,7 +3029,7 @@ input, select, textarea {
 						padding: 1em 0;
 						line-height: 1.5;
 						border: 0;
-						color: inherit;
+						color: #ffffff;
 					}
 
 					#menu > .inner > ul > li:first-child {
@@ -3147,6 +3149,21 @@ input, select, textarea {
 			transform: scale(1.0) rotate(0deg);
 			opacity: 1;
 		}
+
+/* Wymuszenie białego koloru dla WSZYSTKICH linków w menu */
+#menu a {
+    color: #ffffff ;
+}
+
+#menu a:hover {
+    color: #f2849e ;
+}
+
+/* Białe nagłówki kategorii */
+#menu span,
+#menu p {
+    color: #ffffff ;
+}
 
 /* Main */
 
