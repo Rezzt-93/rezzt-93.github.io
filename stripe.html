@@ -42,12 +42,12 @@
 
 		<!-- Menu -->
 		<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="stripe.html">Stripe Transactions Dashboard</a></li>
-						</ul>
-					</nav>
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="stripe.html">Stripe Transactions Dashboard</a></li>
+			</ul>
+		</nav>
 
 		<!-- Main -->
 		<div id="main">
@@ -57,75 +57,71 @@
 				</center>
 				<span class="image main"><img src="images/stripe.jpg" alt="" /></span>
 
-				<h1>Sales Analytics Dashboard - Analiza transakcji Stripe</h1>
+				<h1>Sales Analytics Dashboard – Stripe Transactions Analysis</h1>
 
 
-				<h2>Cel Projektu</h2>
+				<h2>Project Goal</h2>
 
-				<p>Dashboard został stworzony w celu analizy dodatkowej sprzedaży realizowanej przez aplikację
-					Spacebring.
-					Projekt koncentruje się na identyfikacji kluczowych wzorców
-					sprzedażowych, analizie prowizji oraz optymalizacji operacyjnej na podstawie 17 miesięcy danych
-					transakcyjnych z platformy Stripe.</p>
+				<p>The dashboard was created to analyze additional sales generated through the Spacebring application.
+					The project focuses on identifying key sales patterns, analyzing commissions, and supporting
+					operational optimization based on 17 months of transaction data from the Stripe platform.</p>
 
 
-				<h2>Technologie i narzędzia użyte w Projekcie</h2>
+				<h2>Technologies and Tools Used</h2>
 
 				<div>
-					MS Excel, Power Pivot, Power Query, VBA Macros, DAX
+					MS Excel, Power Pivot, Power Query, Macros, DAX
 				</div><br>
 
-				<h2>Krok po kroku :</h2>
+				<h2>Step by Step:</h2>
 
 				<ul>
-					<li>Przygotowanie i czyszczenie danych w <strong>Power Query</strong>, podział na cztery tabele
-						(faktów i wymiarów).
+					<li>Data preparation and cleaning in <strong>Power Query</strong>, split into four tables (fact and
+						dimension).
 					</li>
-					<li>Zbudowanie modelu danych w <strong>Power Pivot (model płatka śniegu)</strong> oraz uporządkowanie
-						relacji między
-						tabelami.</li>
-					<li>Utworzenie dedykowanego kontenera na miary i implementacja 17 miar w języku <strong>DAX</strong>.
+					<li>Building a data model in <strong>Power Pivot (snowflake schema)</strong> and organizing table
+						relationships.</li>
+					<li>Creating a dedicated measure container and implementing 17 measures in <strong>DAX</strong>.
 					</li>
-					<li>Przygotowanie obszaru roboczego pod dashboard – stworzenie <strong>tabel przestawnych</strong>
-						jako fundamentu
-						wizualizacji zapewniającego interaktywność.</li>
-						<li>Zaprojektowanie dashboardu - budowa wizualizacji oraz dodanie niestandardowych slicerów zapewniających intuicyjną eksplorację i filtrowanie danych.</li>
-					<li>Stworzenie dwóch <strong>makr</strong> oraz nadanie ich na przyciski:</li>
+					<li>Preparing the dashboard workspace – creating <strong>pivot tables</strong> as the foundation for
+						interactive visualizations.</li>
+					<li>Designing the dashboard – building visualizations and adding custom slicers for intuitive data
+						exploration and filtering.</li>
+					<li>Creating two <strong>macros</strong> and assigning them to buttons:</li>
 
-					Makro 1 – filtrujące dashboard w celu zaprezentowania ciekawego spostrzeżenia z analizy.<br>
-					Makro 2 – czyszczące wszystkie filtry i przywracające widok początkowy.
-					<li>Finalna eksploracja dashboardu, dopracowanie estetyki, wyciągnięcie wniosków i przygotowanie
-						opisu.</li>
-					
+					Macro 1 – filtering the dashboard to present an interesting analytical insight.<br>
+					Macro 2 – clearing all filters and restoring the initial view.
+					<li>Final dashboard exploration, improving design and aesthetics, drawing conclusions, and preparing
+						documentation.</li>
+
 				</ul>
-				<center><p>Finalny obraz dashboardu</p></center>
-				<span class="image main"><img src="images/Dashboard1.png" alt="" /></span>	
-				
-				<h2>Wnioski / Spostrzeżenia</h2>
-				
+				<center>
+					<p>Final Dashboard Overview</p>
+				</center>
+				<span class="image main"><img src="images/Dashboard1.png" alt="" /></span>
+
+				<h2>Insights / Findings</h2>
+
 				<ul>
-					<li><strong>Jeden klient wygenerował ponad 60% przychodów</strong> w dwóch najlepszych miesiącach sprzedażowych (maj i wrzesień 2024), co wskazuje na dużą koncentrację przychodów i potencjalne ryzyko uzależnienia od pojedynczego klienta.</li>
-					<li><strong>Sprzedaż koncentruje się głównie w środku tygodnia (wtorek – środa).</strong> Wyjątkiem jest poniedziałek, którego wysoka wartość wynika z przychodów wygenerowanych przez jednego kluczowego klienta (patrz punkt 1).</li>
-					<li><strong>Stopa zwrotów utrzymuje się na niskim poziomie 2,30%</strong>, a w niektórych miesiącach wynosi 0%, co sugeruje wysoką satysfakcję klientów.</li>
-					<li>Brak powtarzalnych <strong>wzorców sprzedaży</strong> w danych z początku roku (np. marzec 2024 – 3 653 PLN vs marzec 2025 – 6 740 PLN) co utrudnia dokładne prognozowanie.</li>
-					<li><strong>Liczba transakcji silnie koreluje ze sprzedażą (podobne linie trendu na wykresach)</strong>, co wskazuje na stabilną średnią wartość zamówienia i potwierdza, że wzrost przychodów jest napędzany głównie przez większą liczbę zamówień.</li>
+					<li><strong>A single client generated over 60% of revenue</strong> in the two best-performing months (May and September 2024), indicating a high revenue concentration and potential dependency risk on one client.</li>
+					<li><strong>Sales are mostly concentrated in the middle of the week (Tuesday – Wednesday).</strong> The exception is Monday, which shows high values due to one key client’s transactions (see point 1).</li>
+					<li><strong>The return rate remains low at 2.30%</strong>, and in some months drops to 0%, suggesting high customer satisfaction.</li>
+					<li><strong>No repeatable sales patterns</strong> were observed in early-year data (e.g., March 2024 – PLN 3,653 vs March 2025 – PLN 6,740), making forecasting more challenging.</li>
+					<li><strong>The number of transactions strongly correlates with sales (similar trend lines)</strong>, confirming that revenue growth is mainly driven by a higher number of orders rather than changes in average order value.</li>
 				</ul>
 
-				<h2>Potencjalne zastosowanie biznesowe</h2>
+				<h2>Potential Business Use Cases</h2>
 				<ul>
-					<li>Narzędzie jest szczególnie wartościowe dla działów sprzedaży i operacji w kontekście analizy
-					efektywności recepcji w generowaniu dodatkowych przychodów.</li>
-					<li>Dashboard może wspierać decyzje dotyczące optymalizacji operacyjnej - redukcja grafików recepcji w słabsze dni sprzedażowe (piątek)
-						 może obniżyć koszty bez wpływu na przychody.</li>
-					<li>Pomoc w identyfikacji kluczowych klientów generujących większość przychodów umożliwia dedykowaną obsługę i programy lojalnościowe.</li>
-					<li>Porównanie sprzedaży dodatkowej z innymi źródłami generowania przychodów.</li>
-					<li>Strategia cenowa- analiza średniej wartości zamówienia może pomóc w efektywnym i dynamicznym ustalaniu cen. </li>
+					<li>Valuable for sales and operations teams to analyze front desk efficiency in generating additional revenue.</li>
+					<li>Supports operational optimization decisions – e.g., reducing reception staffing on weaker sales days (Fridays) could lower costs without impacting revenue.</li>
+					<li>Helps identify key clients generating the majority of revenue, enabling dedicated service and loyalty programs.</li>
+					<li>Comparing additional sales with other revenue streams.</li>
+					<li>Pricing strategy – analyzing the average order value can support effective and dynamic pricing decisions.</li>
 				</ul>
 				<span class="image main"><img src="images/dashboard2.png" alt="" /></span>
-				<span class="image main"><img src="images/pquery.png" alt="" /></span>	
 				<span class="image main"><img src="images/Modeldanych.png" alt="" /></span>
-				<span class="image main"><img src="images/Miary.png" alt="" /></span>	
-				
+				<span class="image main"><img src="images/Miary.png" alt="" /></span>
+
 			</div>
 		</div>
 
