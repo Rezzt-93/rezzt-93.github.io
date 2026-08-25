@@ -65,86 +65,113 @@
 				The interactive Power BI report covers expedition data from 1950 to June 2024, with earlier historical records available through the year filter.</p>
 
 				<h2>Technologies & Tools Used</h2>
-
-				<div>
+				
+				<p>
 					Power BI Desktop, Power Query, DAX, Data Modeling, Azure Maps, What-if Parameters, Bookmarks, Custom Tooltips
-				</div><br>
-
+				</p><br>
+				
 				<h2>Step by Step:</h2>
-
-				<ol>
-					<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
-					<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
-					<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
-					<li>Built a data model with three active one-to-many relationships:
-						<br><ul>
-							<li>Years → Expeditions</li>
-							<li>Peaks → Expeditions</li>
-							<li>Expeditions → Members</li>
-						</ul>
-					</li>
-					<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
-					<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as successful expedition, member summit rate, and death rate above Base Camp</li>
-					<li><strong>Created approximately 25 DAX measures</strong> covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
-					<li><strong>Developed dynamic parameters</strong> for controlling the minimum number of expeditions required in peak-level comparisons</li>
-					<li><strong>Designed four interactive report pages:</strong>
-						<br><ul>
-							<li>Expedition Trends</li> 
-							<li>Peak Popularity & Success</li> 
-							<li>Risk & Safety</li> 
-							<li>Global Participation</li>
-						</ul>
-					</li>
-					<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
-				</ol>
+				
+				<div>
+					<ol>
+						<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
+						<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
+						<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
+						<li>Built a data model with three active one-to-many relationships:
+							<ul><br>
+								<li>Years → Expeditions</li>
+								<li>Peaks → Expeditions</li>
+								<li>Expeditions → Members</li>
+							</ul>
+						</li>
+						<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
+						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as successful expedition, member summit rate, and death rate above Base Camp</li>
+						<li><strong>Created approximately 25 DAX measures</strong> covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
+						<li><strong>Developed dynamic parameters</strong> for controlling the minimum number of expeditions required in peak-level comparisons</li>
+						<li><strong>Designed four interactive report pages:</strong>
+							<ul><br>
+								<li>Expedition Trends</li> 
+								<li>Peak Popularity & Success</li> 
+								<li>Risk & Safety</li> 
+								<li>Global Participation</li>
+							</ul>
+						</li>
+						<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
+					</ol>
+				</div>
 				<center>
 					<h2>Final Dashboard Overview</h2>
 				</center>
-				<div class="col-4"><span class="image fit"><img src="images/01-expedition-trends.png" alt="" /></span></div>
-				<div class="col-4"><span class="image fit"><img src="images/02-peak-popularity-success.png" alt="" /></span></div>
-				<div class="col-4"><span class="image fit"><img src="images/03-risk-safety.png" alt="" /></span></div>
-				<div class="col-4"><span class="image fit"><img src="images/04-global-participation.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/01-expedition-trends.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/02-peak-popularity-success.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/03-risk-safety.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/04-global-participation.png" alt="" /></span></div>
 				
 				<h2>Insights / Findings</h2>
-				<div><ul class="alt">
-					<ol>
-						<li><strong>Expedition volume and participant volume peaked in different years.</strong>
-							<p>The highest number of expeditions was recorded in 2009 with 420 expeditions and 2,865 participants. 
-							The highest participant volume occurred in 2023, with 4,379 participants across only 274 expeditions. 
-							Average reported expedition size increased from approximately 6.8 to 16.0 participants.</p>
-						</li>
-						<li><strong>Everest was the most frequently attempted peak.</strong>
-							<p>Everest recorded 2,338 expeditions and represented 20.6% of all expedition activity. 
-							Ama Dablam ranked second with 1,576 expeditions.</p>
-						</li>
-						<li><strong>Ama Dablam combined popularity with strong expedition success.</strong>
-							<p>Among peaks with at least 30 expeditions, Ama Dablam achieved the highest expedition success rate at 71.3%, followed by Himlung Himal at 67.8% and Kangchenjunga at 65.5%.</p>
-						</li>
-						<li><strong>Everest activity was strongly seasonal.</strong>
-							<p>Everest represented approximately 38.7% of spring expeditions, compared with only 4.1% in autumn.</p>
-						</li>
-						<li><strong>The highest number of deaths did not indicate the highest relative risk.</strong>
-							<p>Everest recorded the most deaths, but Annapurna I and Dhaulagiri I had substantially higher death rates relative to participants active above Base Camp and successful summiters.</p>
-						</li>
-						<li><strong>Falls and avalanches were the leading recorded causes of death.</strong>
-							<p>Falls accounted for 331 recorded deaths above Base Camp, while avalanches accounted for 322.</p>
-						</li>
-						<li><strong>Nepal dominated global participation.</strong>
-							<p>Nepal represented 20,704 participant records, equal to 23.4% of the total. Nepal also recorded 14,169 successful participant records and a 69.4% member summit rate.</p>
-						</li>
-					</ol>
-				</ul>
+					<div>
+						<ul class="alt">
+							<ol>
+								<li><strong>Expedition volume and participant volume peaked in different years.</strong>
+									<p>The highest number of expeditions was recorded in 2009 with 420 expeditions and 2,865 participants. 
+									The highest participant volume occurred in 2023, with 4,379 participants across only 274 expeditions. 
+									Average reported expedition size increased from approximately 6.8 to 16.0 participants.</p>
+								</li>
+								<li><strong>Everest was the most frequently attempted peak.</strong>
+									<p>Everest recorded 2,338 expeditions and represented 20.6% of all expedition activity. 
+									Ama Dablam ranked second with 1,576 expeditions.</p>
+								</li>
+								<li><strong>Ama Dablam combined popularity with strong expedition success.</strong>
+									<p>Among peaks with at least 30 expeditions, Ama Dablam achieved the highest expedition success rate at 71.3%, followed by Himlung Himal at 67.8% and Kangchenjunga at 65.5%.</p>
+								</li>
+								<li><strong>Everest activity was strongly seasonal.</strong>
+									<p>Everest represented approximately 38.7% of spring expeditions, compared with only 4.1% in autumn.</p>
+								</li>
+								<li><strong>The highest number of deaths did not indicate the highest relative risk.</strong>
+									<p>Everest recorded the most deaths, but Annapurna I and Dhaulagiri I had substantially higher death rates relative to participants active above Base Camp and successful summiters.</p>
+								</li>
+								<li><strong>Falls and avalanches were the leading recorded causes of death.</strong>
+									<p>Falls accounted for 331 recorded deaths above Base Camp, while avalanches accounted for 322.</p>
+								</li>
+								<li><strong>Nepal dominated global participation.</strong>
+									<p>Nepal represented 20,704 participant records, equal to 23.4% of the total. Nepal also recorded 14,169 successful participant records and a 69.4% member summit rate.</p>
+								</li>
+							</ol>
+						</ul>
+					</div>
+
+				<h2>Analytical Value</h2>
+				
+					<div>
+						<ul>
+							<li>
+								<p>Supports historical analysis of changes in expedition activity and team size</p>
+							</li>
+							<li>
+								<p>Identifies peaks combining high popularity with strong expedition success</p>
+							</li>
+							<li>
+								<p>Separates absolute deaths from relative risk to prevent misleading comparisons</p>
+							</li>
+							<li>
+								<p>Demonstrates how minimum observation thresholds improve the reliability of success-rate rankings</p>
+							</li>
+							<li>
+								<p>Enables geographic exploration of participation and performance by citizenship</p>
+							</li>
+							<li>
+								<p>Provides an interactive foundation for comparing years, seasons, regions, height bands, peaks, and countries</p>
+							</li>
+						</ul>
+					</div>
+				
+				<h2>Data Limitations</h2>
+				<div>
+					<p>Data for 2024 ends in June and represents a partial year</p><br>
+					<p>Participant records represent person-expedition entries, not unique climbers</p><br>
+					<p>Detailed hired-personnel records may be incomplete</p><br>
+					<p>Records with missing, uncertain, or multiple citizenship values are not displayed on the map</p><br>
+					<p>The results identify patterns and relationships but do not establish their causes</p><br>
 				</div>
-
-				<h2>Potential Business Use Cases</h2>
-				<ul>
-					lorem ipsum
-				</ul>
-				<span class="image main"><img src="images/dashboard2.png" alt="" /></span>
-				<span class="image main"><img src="images/Modeldanych.png" alt="" /></span>
-				<span class="image main"><img src="images/pquery.png" alt="" /></span>
-				<span class="image main"><img src="images/Miary.png" alt="" /></span>
-
 			</div>
 		</div>
 
