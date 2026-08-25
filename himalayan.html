@@ -61,10 +61,10 @@
 
 				<h2>Project Goal</h2>
 
-				<p>The project was created to analyze the historical development of Himalayan mountaineering, including expedition activity, peak popularity, summit success, recorded risk, and global participation. </p><br>
-				<p>The interactive Power BI report covers expedition data from 1950 to June 2024, with earlier historical records available through the year filter.</p>
+				<p>The project was created to analyze the historical development of Himalayan mountaineering, including expedition activity, peak popularity, summit success, recorded risk, and global participation.
+				The interactive Power BI report covers expedition data from 1950 to June 2024, with earlier historical records available through the year filter.</p>
 
-				<h2>Technologies and Tools Used</h2>
+				<h2>Technologies & Tools Used</h2>
 
 				<div>
 					Power BI Desktop, Power Query, DAX, Data Modeling, Azure Maps, What-if Parameters, Bookmarks, Custom Tooltips
@@ -73,8 +73,23 @@
 				<h2>Step by Step:</h2>
 
 				<ul>
-					<li>lorem ipsum
+					<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
+					<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
+					<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
+					<li>Built a data model with three active one-to-many relationships: <strong>Years → Expeditions / Peaks → Expeditions / Expeditions → Members</strong></li>
+					<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
+					<li>Defined analytical concepts and business rules underlying the key measures, such as successful expedition, member summit rate, and death rate above Base Camp</li>
+					<li>Created approximately 25 DAX measures covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
+					<li>Developed dynamic parameters for controlling the minimum number of expeditions required in peak-level comparisons</li>
+					<li>Designed four interactive report pages: 
+						<ol>
+							<li>Expedition Trends</li> 
+							<li>Peak Popularity & Success</li> 
+							<li>Risk & Safety</li> 
+							<li>Global Participation</li>
+						</ol>
 					</li>
+					<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
 				</ul>
 				<center>
 					<p>Final Dashboard Overview</p>
