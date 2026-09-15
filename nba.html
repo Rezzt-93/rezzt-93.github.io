@@ -102,12 +102,53 @@
 				</div>
 					<h2>SQL Analysis Overview</h2>
 					<div>
-						<p><strong>The final project was organized into four analytical areas:</strong></p>
+						<p>The final project was organized into four analytical areas:</p>
 						<p><strong>Dataset Overview</strong> - dataset size, available seasons, and changes in the number of player records over time.</p>
 						<p><strong>Season Leaders</strong> - players with the highest combined points, rebounds, and assists per game in each season.</p>
 						<p><strong>Draft and College Analysis</strong> - scoring performance by draft position, second-round and undrafted players, and college background.</p>
 						<p><strong>International Players</strong> - international representation by season, leading countries, and the highest-scoring international players.</p>
 					</div>
+				<h2>SQL Analysis Overview</h2>
+				<h2>Featured SQL Query</h2>
+
+<p>
+    The following query calculates the share of international players
+    in each NBA season.
+</p>
+
+<pre><code>WITH international_players AS (
+    SELECT
+        season,
+        COUNT(DISTINCT player_id) AS international_player_count
+    FROM nba_players
+    WHERE country &lt;&gt; 'USA'
+    GROUP BY season
+),
+total_players AS (
+    SELECT
+        season,
+        COUNT(DISTINCT player_id) AS total_player_count
+    FROM nba_players
+    GROUP BY season
+)
+SELECT
+    international_players.season,
+    international_players.international_player_count,
+    ROUND(
+        international_players.international_player_count * 100.0
+        / total_players.total_player_count,
+        2
+    ) AS international_player_percentage
+FROM international_players
+LEFT JOIN total_players
+    ON international_players.season = total_players.season
+ORDER BY international_players.season;</code></pre>
+
+<p>
+    The query combines two Common Table Expressions with a
+    <strong>LEFT JOIN</strong> to compare international player counts
+    with the total number of players in each season.
+</p>
 				<h2>Insights / Findings</h2>
 					
 				<div>
