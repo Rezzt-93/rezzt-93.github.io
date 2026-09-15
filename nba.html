@@ -70,48 +70,34 @@
 				<h2>Technologies & Tools Used</h2>
 				
 				<p>
-					SQL, Microsoft Excel, PostgreSQL enviroment
+					SQL, Microsoft Excel, PostgreSQL
 				</p><br>
 
 				<h2>SQL Skills:</h2>
 				<ol>
-					<li>Data filtering with WHERE</li>
-					<li>Aggregation with COUNT(), AVG(), MIN(), and MAX()</li>
-					<li>Grouping and aggregated filtering with GROUP BY and HAVING</li>
-					<li>Common Table Expressions using WITH</li>
-					<li>Combining query results with LEFT JOIN and CROSS JOIN</li>
-					<li>Window functions using RANK() and PARTITION BY</li>
+					<li>Data filtering with <strong>WHERE</strong></li>
+					<li>Aggregation with <strong>COUNT(), AVG(), MIN(), and MAX()</strong></li>
+					<li>Grouping and aggregated filtering with <strong>GROUP BY</strong> and <strong>HAVING</strong></li>
+					<li><strong>Common Table Expressions</strong></li>
+					<li>Combining query results with <strong>LEFT JOIN</strong> and <strong>CROSS JOIN</strong></li>
+					<li>Window functions using <strong>RANK()</strong> and <strong>PARTITION BY</strong></li>
 					<li>Percentage calculations and player rankings</li>
-					<li>Player-level identifier creation using DENSE_RANK()</li>
+					<li>Player-level identifier creation using <strong>DENSE_RANK()</strong></li>
 				</ol>
 				
 				<h2>Step by Step:</h2>
 				
 				<div>
 					<ol>
-						<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
-						<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
-						<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
-						<li>Built a data model with three active one-to-many relationships:
-							<ul><br>
-								<li>Years → Expeditions</li>
-								<li>Peaks → Expeditions</li>
-								<li>Expeditions → Members</li>
-							</ul>
-						</li>
-						<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
-						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as successful expedition, member summit rate, and death rate above Base Camp</li>
-						<li><strong>Created approximately 25 DAX measures</strong> covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
-						<li><strong>Developed dynamic parameters</strong> for controlling the minimum number of expeditions required in peak-level comparisons</li>
-						<li><strong>Designed four interactive report pages:</strong>
-							<ul><br>
-								<li>Expedition Trends</li> 
-								<li>Peak Popularity & Success</li> 
-								<li>Risk & Safety</li> 
-								<li>Global Participation</li>
-							</ul>
-						</li>
-						<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
+						<li>Imported the source CSV file into a PostgreSQL table containing 12,844 player records across 27 NBA seasons.</li>
+						<li>Used the original CSV index as the primary key for individual records.</li>
+						<li>Created a player-level identifier with DENSE_RANK() based on player name, college, and draft year.</li>
+						<li>Explored the dataset by writing initial SQL queries to understand its structure, available fields, season range, and player records.</li>
+						<li>Defined analytical questions focused on season leaders, draft position, college background, and international representation.</li>
+						<li>Wrote and organized SQL queries to answer each analytical question and identify meaningful patterns in the data.</li>
+						<li>Reviewed the query results and selected the most relevant findings for the final analysis.</li>
+						<li>Exported the SQL queries and selected results into separate files for clear project documentation.</li>
+						<li>Created a summary of the analysis, documented the project in a README, and prepared the final materials for GitHub and the portfolio website.</li>
 					</ol>
 				</div>
 				<center>
