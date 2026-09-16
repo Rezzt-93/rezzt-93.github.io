@@ -58,7 +58,7 @@
 					<h1>NBA Players Data Exploration</h1>
 					<p><i>SQL Data Exploration Project</i></p>
 					<p><strong>12,844 player records · 27 seasons · 1996-97 to 2022-23</strong></p>
-					<p>Exploring NBA player data through SQL, with a focus on season leaders, draft position, college background, and international growth.</p>
+					<p>Exploring NBA player data through SQL, with a focus on season leaders, first-round draft positions, and international growth.</p>
 				</center>
 				<span class="image main"><img src="images/nba-02.jpg" alt="" /></span>
 
@@ -89,7 +89,7 @@
 				
 				<div>
 					<ol>
-						<li>Imported the source CSV file into a MySQL Workbench table containing 12,844 player records across 27 NBA seasons.</li>
+						<li>Imported the source CSV file into a MySQL database using MySQL Workbench. The dataset contained 12,844 player records across 27 NBA seasons.</li>
 						<li>Used the original CSV index as the primary key for individual records.</li>
 						<li>Created a player-level identifier with DENSE_RANK() based on player name, college, and draft year.</li>
 						<li>Explored the dataset by writing initial SQL queries to understand its structure, available fields, season range, and player records.</li>
@@ -160,7 +160,7 @@ ORDER BY international_players.season;</code></pre>
 									<p>Their share reached 23.38%, compared with only 2.04% in the first analyzed season.</p>
 								</li>
 								<li><strong>The first overall draft position produced the highest scoring average among first-round positions.</strong>
-									<p>Players selected first averaged 16.46 points per game. However, scoring averages did not decline consistently with each subsequent draft position.</p>
+									<p>Player-season records associated with the first overall pick averaged 16.46 points per game. However, scoring averages did not decline consistently with each subsequent draft position.</p>
 								</li>
 								<li><strong>Russell Westbrook recorded the highest season-leading combined average.</strong>
 									<p>The combined points, rebounds, and assists average reached 52.7 per game in the 2016-17 season.</p>
