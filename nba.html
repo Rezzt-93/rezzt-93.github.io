@@ -65,7 +65,7 @@
 				<h2>Project Goal</h2>
 
 				<p>The goal of this project was to demonstrate practical SQL skills by exploring NBA player data and answering structured analytical questions.
-					The analysis focused on season leaders, draft position, college background, and the long-term growth of international representation in the NBA across 27 seasons, from 1996-97 through 2022-23.</p>
+					The analysis focused on season leaders, first-round draft positions, and the long-term growth of international representation in the NBA across 27 seasons, from 1996-97 through 2022-23.</p>
 
 				<h2>Technologies & Tools Used</h2>
 				
@@ -93,7 +93,7 @@
 						<li>Used the original CSV index as the primary key for individual records.</li>
 						<li>Created a player-level identifier with DENSE_RANK() based on player name, college, and draft year.</li>
 						<li>Explored the dataset by writing initial SQL queries to understand its structure, available fields, season range, and player records.</li>
-						<li>Defined analytical questions focused on season leaders, draft position, college background, and international representation.</li>
+						<li>Defined analytical questions focused on season leaders, first-round draft positions, and international representation.</li>
 						<li>Wrote and organized SQL queries to answer each analytical question and identify meaningful patterns in the data.</li>
 						<li>Reviewed the query results and selected the most relevant findings for the final analysis.</li>
 						<li>Exported the SQL queries and selected results into separate files for clear project documentation.</li>
@@ -105,8 +105,8 @@
 						<p>The final project was organized into four analytical areas:</p>
 						<p><strong>Dataset Overview</strong> - dataset size, available seasons, and changes in the number of player records over time.</p>
 						<p><strong>Season Leaders</strong> - players with the highest combined points, rebounds, and assists per game in each season.</p>
-						<p><strong>Draft and College Analysis</strong> - scoring performance by draft position, second-round and undrafted players, and college background.</p>
-						<p><strong>International Players</strong> - international representation by season, leading countries, and the highest-scoring international players.</p>
+						<p><strong>Draft Position Analysis</strong> - average scoring performance across first-round draft positions.</p>
+						<p><strong>International Player Growth</strong> - changes in the number and percentage of players recorded outside the USA across seasons.</p>
 					</div>
 				<h2>Sample SQL Query</h2>
 
@@ -143,30 +143,24 @@ LEFT JOIN total_players
     ON international_players.season = total_players.season
 ORDER BY international_players.season;</code></pre>
 
+				<p>The query result was used to examine the long-term growth of international representation and create the chart presented below.</p><br>
+				<p><i>Player countries follow the classifications provided in the source dataset.</i></p>
+				
 				<h2>Insights / Findings</h2>
 					
 				<div>
 						<ul class="alt">
 							<ol>
 								<li><strong>International representation increased substantially.</strong>
-									<p>International players represented 2.04% of player records in 1996-97 and 23.38% in 2022-23. The increase occurred across most of the analyzed period, indicating a clear long-term shift toward a more international league.</p>
+									<p>Players recorded outside the USA represented 2.04% of player records in 1996-97 and 23.38% in 2022-23. The increase occurred across most of the analyzed period, indicating a clear long-term shift toward a more international league.</p>
 								</li>
 								<div style="max-width: 900px; margin: 2em auto;"><span class="image fit"><img src="images/international-player-share-by-season.png" alt="" /></span>
 								</div>
-								<li><strong>Canada was the largest source of international players.</strong>
-									<p>Canada contributed 48 unique players, followed by France with 37 and Australia with 31.</p>
+								<li><strong>International players represented nearly one-quarter of the league by 2022-23.</strong>
+									<p>Their share reached 23.38%, compared with only 2.04% in the first analyzed season.</p>
 								</li>
-								<li><strong>International growth was accompanied by strong individual performance.</strong>
-									<p>Luka Doncic recorded the highest average scoring result among international players at 27.70 points per game, followed by Joel Embiid at 26.54.</p>
-								</li>
-								<li><strong>The first overall draft pick produced the highest scoring average among first-round positions.</strong>
+								<li><strong>The first overall draft position produced the highest scoring average among first-round positions.</strong>
 									<p>Players selected first averaged 16.46 points per game. However, scoring averages did not decline consistently with each subsequent draft position.</p>
-								</li>
-								<li><strong>Strong scorers were also found outside the first round.</strong>
-									<p>Nikola Jokic, selected with the 41st pick, averaged 20.40 points per game. Several second-round and undrafted players also appeared among the leading scorers in these groups.</p>
-								</li>
-								<li><strong>College scoring averages and player representation showed different patterns.</strong>
-									<p>Oklahoma and Wake Forest recorded the highest scoring averages among colleges represented by at least 10 players. Kentucky and Duke combined strong averages with substantially larger groups of players.</p>
 								</li>
 								<li><strong>Russell Westbrook recorded the highest season-leading combined average.</strong>
 									<p>The combined points, rebounds, and assists average reached 52.7 per game in the 2016-17 season.</p>
@@ -180,22 +174,22 @@ ORDER BY international_players.season;</code></pre>
 					<div>
 						<ul>
 							<li>
-								Shows how international representation in the NBA changed across 27 seasons and highlights the league's long-term international growth.
+								Shows how international representation changed across 27 NBA seasons.
 							</li>
 							<li>
-								Identifies the countries that contributed the largest numbers of international players.
+								Highlights the long-term shift toward a more internationally represented league.
 							</li>
 							<li>
-								Compares scoring performance across draft positions and identifies productive players selected in the second round or left undrafted.
+								Compares average scoring performance across first-round draft positions.
 							</li>
 							<li>
-								Highlights differences between colleges in both player representation and average scoring performance.
+								Shows that scoring results did not decline consistently with every subsequent draft position.
 							</li>
 							<li>
 								Identifies season leaders based on combined points, rebounds, and assists per game.
 							</li>
 							<li>
-								Provides a structured overview of selected patterns in NBA player performance, background, and league composition.
+								Provides a structured example of using SQL to answer analytical questions and interpret query results.
 							</li>
 						</ul>
 					</div>
@@ -204,9 +198,11 @@ ORDER BY international_players.season;</code></pre>
 				<div>
 					<p>The dataset covers the 1996-97 through 2022-23 seasons and does not represent the complete history of the NBA.<br>
 					Player statistics are recorded as season-level averages rather than individual game results.<br>
-					Career scoring averages were calculated from the available season-level values and were not weighted by games played.<br>
-					A player-level identifier was generated from player name, college, and draft year to aggregate records across multiple seasons.<br>
-					College and draft comparisons identify patterns in the available data but do not establish causal relationships.
+					Player countries follow the classifications provided in the source dataset.<br>
+					A player-level identifier was generated from player name, college, and draft year during the original analysis.<br>
+					College names were not standardized in the source data, so college-level results were excluded from the main findings.<br>
+					Career-level rankings dependent on the generated identifier were also excluded from the main findings.<br>
+					The analysis identifies patterns but does not establish causal relationships.
 					</p>
 				</div>
 			
