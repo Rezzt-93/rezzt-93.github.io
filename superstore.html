@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Himalayan Expeditions - Analytics Report</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Bartłomiej
+						Czop</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="stripe.html">Stripe Dashboard</a></li>
+				<li><a href="himalayan.html">Himalayan Expeditions</a></li>
+				<li><a href="nba.html">NBA Data Exploration</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<center>
+					<h1>Himalayan Expeditions</h1>
+					<p><i>Power BI Analytics Report</i></p>
+					<p><strong>11,425 expeditions · 88,5K participant records · 416 peaks</strong></p>
+					<p>Historical exploration of expedition activity, summit success, recorded risk, and global participation</p>
+				</center>
+				<span class="image main"><img src="images/himalayan-04.jpg" alt="" /></span>
+
+				<h2>Project Goal</h2>
+
+				<p>The project was created to analyze the historical development of Himalayan mountaineering, including expedition activity, peak popularity, summit success, recorded risk, and global participation.
+				The interactive Power BI report covers expedition data from 1950 to June 2024, with earlier historical records available through the year filter.</p>
+
+				<h2>Technologies & Tools Used</h2>
+				
+				<p>
+					Power BI Desktop, Power Query, DAX, Data Modeling, Interactive Maps, Dynamic Parameters, Bookmarks, Custom Tooltips
+				</p><br>
+				
+				<h2>Step by Step:</h2>
+				
+				<div>
+					<ol>
+						<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
+						<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
+						<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
+						<li>Built a data model with three active one-to-many relationships:
+							<ul><br>
+								<li>Years → Expeditions</li>
+								<li>Peaks → Expeditions</li>
+								<li>Expeditions → Members</li>
+							</ul>
+						</li>
+						<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
+						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as successful expedition, member summit rate, and death rate above Base Camp</li>
+						<li><strong>Created approximately 25 DAX measures</strong> covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
+						<li><strong>Developed dynamic parameters</strong> for controlling the minimum number of expeditions required in peak-level comparisons</li>
+						<li><strong>Designed four interactive report pages:</strong>
+							<ul><br>
+								<li>Expedition Trends</li> 
+								<li>Peak Popularity & Success</li> 
+								<li>Risk & Safety</li> 
+								<li>Global Participation</li>
+							</ul>
+						</li>
+						<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
+					</ol>
+				</div>
+				<center>
+					<h2>Final Report Overview</h2>
+					<div>
+						<p><strong>The final report provides four analytical perspectives:</strong></p>
+						<p>Expedition Trends - long-term changes in expedition and participant volume.</p>
+						<div class="col-4"><span class="image fit"><img src="images/01-expedition-trends.png" alt="" /></span></div>
+						<p>Peak Popularity & Success - peak rankings, summit success, Everest trends, and height bands.</p>
+						<div class="col-4"><span class="image fit"><img src="images/02-peak-popularity-success.png" alt="" /></span></div>
+						<p>Risk & Safety - recorded deaths, causes of death, relative risk, and success versus risk by peak.</p>
+						<div class="col-4"><span class="image fit"><img src="images/03-risk-safety.png" alt="" /></span></div>
+						<p>Global Participation - country-level participation, summit performance, and historical trends.</p>
+						<div class="col-4"><span class="image fit"><img src="images/04-global-participation.png" alt="" /></span></div>
+					</div>
+				</center>
+				<h2>Insights / Findings</h2>
+					<div>
+						<ul class="alt">
+							<ol>
+								<li><strong>Expedition volume and participant volume peaked in different years.</strong>
+									<p>The highest number of expeditions was recorded in 2009 with 420 expeditions and 2,865 participants. 
+									The highest participant volume occurred in 2023, with 4,379 participants across only 274 expeditions. 
+									Average reported expedition size increased from approximately 6.8 to 16.0 participants.</p>
+								</li>
+								<li><strong>Everest was the most frequently attempted peak.</strong>
+									<p>Everest recorded 2,338 expeditions and represented 20.6% of all expedition activity. 
+									Ama Dablam ranked second with 1,576 expeditions.</p>
+								</li>
+								<li><strong>Ama Dablam combined popularity with strong expedition success.</strong>
+									<p>Among peaks with at least 30 expeditions, Ama Dablam achieved the highest expedition success rate at 71.3%, followed by Himlung Himal at 67.8% and Kangchenjunga at 65.5%.</p>
+								</li>
+								<li><strong>Everest activity was strongly seasonal.</strong>
+									<p>Everest represented approximately 38.7% of spring expeditions, compared with only 4.1% in autumn.</p>
+								</li>
+								<li><strong>The highest number of deaths did not indicate the highest relative risk.</strong>
+									<p>Everest recorded the most deaths, but Annapurna I and Dhaulagiri I had substantially higher death rates relative to participants active above Base Camp and successful summiters.</p>
+								</li>
+								<li><strong>Falls and avalanches were the leading recorded causes of death.</strong>
+									<p>Falls accounted for 331 recorded deaths above Base Camp, while avalanches accounted for 322.</p>
+								</li>
+								<li><strong>Nepal dominated global participation.</strong>
+									<p>Nepal represented 20,704 participant records, equal to 23.4% of the total. Nepal also recorded 14,169 successful participant records and a 69.4% member summit rate.</p>
+								</li>
+							</ol>
+						</ul>
+					</div>
+
+				<h2>Analytical Value</h2>
+				
+					<div>
+						<ul>
+							<li>
+								Supports historical analysis of changes in expedition activity and team size
+							</li>
+							<li>
+								Identifies peaks combining high popularity with strong expedition success
+							</li>
+							<li>
+								Separates absolute deaths from relative risk to prevent misleading comparisons
+							</li>
+							<li>
+								Demonstrates how minimum observation thresholds improve the reliability of success-rate rankings
+							</li>
+							<li>
+								Enables geographic exploration of participation and performance by citizenship
+							</li>
+							<li>
+								Provides an interactive foundation for comparing years, seasons, regions, height bands, peaks, and countries
+							</li>
+						</ul>
+					</div>
+				
+				<h2>Data Limitations</h2>
+				<div>
+					<p>Data for 2024 ends in June and represents a partial year.<br>
+					Participant records represent person-expedition entries, not unique climbers.<br>
+					Detailed hired-personnel records may be incomplete.<br>
+					Records with missing, uncertain, or multiple citizenship values are not displayed on the map.<br>
+					The results identify patterns and relationships but do not establish their causes.</p>
+				</div>
+			<h2>Explore the project documentation and download the Power BI report from GitHub.</h2>
+			<a href="https://github.com/Rezzt-93/-data-analytics-portfolio-projects/tree/main/powerbi/himalayan%20expeditions" class="button primary icon solid fa-download">View Project on GitHub</a>
+				
+			</div>
+		</div>
+			<!-- Footer -->
+			<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/Rezzt-93/-data-analytics-portfolio-projects" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/bartlomiej-czop/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="mailto:Bartlomiej.czop1@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+						</div>
+					</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
