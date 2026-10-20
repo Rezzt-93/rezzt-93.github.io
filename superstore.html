@@ -79,72 +79,62 @@
 				
 				<div>
 					<ol>
-						<li>Imported and cleaned three source datasets: <strong>Peaks, Expeditions, and Members</strong> </li>
-						<li>Corrected CSV parsing issues, assigned appropriate data types, standardized field names and selected columns relevant to the analysis</li>
-						<li>Created a unique ExpeditionKey and resolved ambiguous expedition identifiers to build reliable table relationships</li>
-						<li>Built a data model with three active one-to-many relationships:
+						<li>Imported the source CSV file containing <strong>51,290 sales lines and 21 columns</strong> into a staging query with disabled load, assigned appropriate data types and standardized field names</li>
+						<li>Performed data quality checks, including the confirmation that the source contains no missing values or exact duplicates, all numeric and date values convert without errors, and no shipping date occurs before its order date</li>
+						<li>Created a continuous date dimension covering the full reporting period and grouped discount values into ordered analytical bands</li>
+						<li>Resolved reused source identifiers by identifying orders through Order ID + Order Date + Customer Name (25,754 orders) and products through Product ID + Product Name (10,768 product combinations), then assigned numeric OrderKey and ProductKey surrogate keys</li>
+						<li>Restructured the source file into DimOrder, DimProduct, and FactSales tables, hid technical fields from Report view, and built a data model with three active one-to-many relationships:
 							<ul><br>
-								<li>Years → Expeditions</li>
-								<li>Peaks → Expeditions</li>
-								<li>Expeditions → Members</li>
+								<li>DimDate → DimOrder</li>
+								<li>DimOrder → FactSales</li>
+								<li>DimProduct → FactSales</li>
 							</ul>
 						</li>
-						<li>Performed data quality checks, including the exclusion of 89 participant records that could not be safely assigned to an expedition and the identification of four expeditions with inconsistent participant counts</li>
-						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as successful expedition, member summit rate, and death rate above Base Camp</li>
-						<li><strong>Created approximately 25 DAX measures</strong> covering expedition activity, participation, success, mortality, peak popularity, and country-level analysis</li>
-						<li><strong>Developed dynamic parameters</strong> for controlling the minimum number of expeditions required in peak-level comparisons</li>
-						<li><strong>Designed four interactive report pages:</strong>
+						<li>Retained 35 repeated order-product combinations and all negative profit values, because the dataset provides no reliable order-line identifier and negative profit represents a valid loss-making sales outcome</li>
+						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as sales line, order, profit margin, loss-making sales line, discount band, and eligible product</li>
+						<li><strong>Created more than 20 DAX measures</strong> covering core performance, previous-year comparisons, year-over-year changes, loss-making sales lines, and product ranking</li>
+						<li><strong>Developed a dynamic parameter</strong> for controlling the minimum number of sales lines required for a product to appear in the lowest-profit ranking</li>
+						<li><strong>Designed two interactive report pages:</strong>
 							<ul><br>
-								<li>Expedition Trends</li> 
-								<li>Peak Popularity & Success</li> 
-								<li>Risk & Safety</li> 
-								<li>Global Participation</li>
+								<li>Executive Sales Overview</li> 
+								<li>Profitability Drivers</li> 
 							</ul>
 						</li>
-						<li>Added expandable filter panels, page navigation, reset buttons, custom report tooltips, conditional formatting, and interactive map filtering</li>
+						<li>Added page navigation, reset buttons, dropdown slicers, cross-filtering, and a tooltip explaining the product threshold, then tested visual performance with Performance Analyzer (all visuals loaded in under approximately 420 ms)</li>
 					</ol>
 				</div>
 				<center>
 					<h2>Final Report Overview</h2>
 					<div>
-						<p><strong>The final report provides four analytical perspectives:</strong></p>
-						<p>Expedition Trends - long-term changes in expedition and participant volume.</p>
-						<div class="col-4"><span class="image fit"><img src="images/01-expedition-trends.png" alt="" /></span></div>
-						<p>Peak Popularity & Success - peak rankings, summit success, Everest trends, and height bands.</p>
-						<div class="col-4"><span class="image fit"><img src="images/02-peak-popularity-success.png" alt="" /></span></div>
-						<p>Risk & Safety - recorded deaths, causes of death, relative risk, and success versus risk by peak.</p>
-						<div class="col-4"><span class="image fit"><img src="images/03-risk-safety.png" alt="" /></span></div>
-						<p>Global Participation - country-level participation, summit performance, and historical trends.</p>
-						<div class="col-4"><span class="image fit"><img src="images/04-global-participation.png" alt="" /></span></div>
+						<p><strong>The final report provides two analytical perspectives:</strong></p>
+						<p>Executive Sales Overview - sales, profit, margin, and order volume with previous-year comparisons, monthly trends, and market and category performance.</p>
+						<div class="col-4"><span class="image fit"><img src="images/01-executive-sales-overview.png" alt="" /></span></div>
+						<p>Profitability Drivers - loss-making sales lines, lowest-profit products and countries, profit margin by discount band, and subcategory results.</p>
+						<div class="col-4"><span class="image fit"><img src="images/02-profitability-drivers.png" alt="" /></span></div>
 					</div>
 				</center>
 				<h2>Insights / Findings</h2>
 					<div>
 						<ul class="alt">
 							<ol>
-								<li><strong>Expedition volume and participant volume peaked in different years.</strong>
-									<p>The highest number of expeditions was recorded in 2009 with 420 expeditions and 2,865 participants. 
-									The highest participant volume occurred in 2023, with 4,379 participants across only 274 expeditions. 
-									Average reported expedition size increased from approximately 6.8 to 16.0 participants.</p>
+								<li><strong>Sales, profit, and order volume increased in every year covered by the dataset.</strong>
+									<p>Sales grew from 2.26M in 2011 to 4.30M in 2014, while profit increased from 248.9K to 504.2K. 
+									Order volume rose from 4,516 to 8,868, while the annual profit margin remained relatively stable between 11.0% and 12.0%.</p>
 								</li>
-								<li><strong>Everest was the most frequently attempted peak.</strong>
-									<p>Everest recorded 2,338 expeditions and represented 20.6% of all expedition activity. 
-									Ama Dablam ranked second with 1,576 expeditions.</p>
+								<li><strong>Furniture combined high sales with substantially weaker profitability.</strong>
+									<p>The category generated 4.11M in sales, approximately 323.6K more than Office Supplies, but delivered only 286.8K in profit compared with 518.5K for Office Supplies. 
+									Its 7.0% profit margin was almost half the 13.7% achieved by Office Supplies. 
+									Furniture also recorded the highest loss-making sales line rate at 31.55%, compared with 23.90% for Technology and 22.39% for Office Supplies.</p>
 								</li>
-								<li><strong>Ama Dablam combined popularity with strong expedition success.</strong>
-									<p>Among peaks with at least 30 expeditions, Ama Dablam achieved the highest expedition success rate at 71.3%, followed by Himlung Himal at 67.8% and Kangchenjunga at 65.5%.</p>
+								<li><strong>Profitability declined sharply as discount levels increased.</strong>
+									<p>Sales lines without a discount generated 6.99M in sales and 1.77M in profit at a 25.3% margin. 
+									In contrast, discount bands above 20% generated approximately 1.93M in sales but produced a combined loss of approximately 814.7K, equivalent to a margin of around -42.2%. 
+									The aggregated result became negative in the 20–30% discount band and deteriorated further at higher discount levels.</p>
 								</li>
-								<li><strong>Everest activity was strongly seasonal.</strong>
-									<p>Everest represented approximately 38.7% of spring expeditions, compared with only 4.1% in autumn.</p>
-								</li>
-								<li><strong>The highest number of deaths did not indicate the highest relative risk.</strong>
-									<p>Everest recorded the most deaths, but Annapurna I and Dhaulagiri I had substantially higher death rates relative to participants active above Base Camp and successful summiters.</p>
-								</li>
-								<li><strong>Falls and avalanches were the leading recorded causes of death.</strong>
-									<p>Falls accounted for 331 recorded deaths above Base Camp, while avalanches accounted for 322.</p>
-								</li>
-								<li><strong>Nepal dominated global participation.</strong>
-									<p>Nepal represented 20,704 participant records, equal to 23.4% of the total. Nepal also recorded 14,169 successful participant records and a 69.4% member summit rate.</p>
+								<li><strong>Country-level losses were heavily concentrated in Turkey and Nigeria, where every recorded sales line was unprofitable.</strong>
+									<p>Together, the two countries generated 162.9K in sales but recorded a combined loss of 179.2K, resulting in an aggregated margin of approximately -110.0%. 
+									All 1,378 sales lines in Turkey fell within the 50–60% discount band, while all 905 sales lines in Nigeria fell within the 60–70% band. 
+									Their combined loss was almost twice the approximately 93.0K recorded across the next three lowest-profit countries: the Netherlands, Honduras, and Pakistan.</p>
 								</li>
 							</ol>
 						</ul>
@@ -155,36 +145,39 @@
 					<div>
 						<ul>
 							<li>
-								Supports historical analysis of changes in expedition activity and team size
+								Tracks sales, profit, margin, and order volume over time with previous-year and year-over-year comparisons
 							</li>
 							<li>
-								Identifies peaks combining high popularity with strong expedition success
+								Compares markets and product categories by sales, profit, and profit margin
 							</li>
 							<li>
-								Separates absolute deaths from relative risk to prevent misleading comparisons
+								Identifies the loss-making sales lines, products, countries, and subcategories that reduce overall profitability
 							</li>
 							<li>
-								Demonstrates how minimum observation thresholds improve the reliability of success-rate rankings
+								Shows how profit margin changes across discount bands
 							</li>
 							<li>
-								Enables geographic exploration of participation and performance by citizenship
+								Demonstrates how a minimum sales-line threshold improves the reliability of the lowest-profit product ranking
 							</li>
 							<li>
-								Provides an interactive foundation for comparing years, seasons, regions, height bands, peaks, and countries
+								Provides an interactive foundation for exploring results by market, segment, category, and year
 							</li>
 						</ul>
 					</div>
 				
 				<h2>Data Limitations</h2>
 				<div>
-					<p>Data for 2024 ends in June and represents a partial year.<br>
-					Participant records represent person-expedition entries, not unique climbers.<br>
-					Detailed hired-personnel records may be incomplete.<br>
-					Records with missing, uncertain, or multiple citizenship values are not displayed on the map.<br>
-					The results identify patterns and relationships but do not establish their causes.</p>
+					<p>The dataset does not specify a currency, so monetary values are presented without a currency symbol.<br>
+					Profit is used as supplied by the source; shipping cost is not subtracted separately because the source does not confirm whether it is already included.<br>
+					The dataset does not contain a reliable source order-line identifier, so repeated order-product combinations were retained.<br>
+					Order and product surrogate keys were created in Power Query for this static portfolio dataset; in production they would normally be managed in a database or data warehouse.<br>
+					Product rankings depend on the selected minimum sales-line threshold.<br>
+					Previous-year measures shift the entire selected date context back by one year, so the clearest comparison is obtained when a single year is selected.<br>
+					The relationship between discount levels and profitability is observational and does not establish causation.<br>
+					Customer names are used as source attributes, and the report does not establish whether identical names always represent the same real-world customer.</p>
 				</div>
 			<h2>Explore the project documentation and download the Power BI report from GitHub.</h2>
-			<a href="https://github.com/Rezzt-93/-data-analytics-portfolio-projects/tree/main/powerbi/himalayan%20expeditions" class="button primary icon solid fa-download">View Project on GitHub</a>
+			<a href="https://github.com/Rezzt-93/-data-analytics-portfolio-projects/tree/main/powerbi/superstore%20sales" class="button primary icon solid fa-download">View Project on GitHub</a>
 				
 			</div>
 		</div>
