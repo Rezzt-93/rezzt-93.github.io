@@ -79,20 +79,18 @@
 				
 				<div>
 					<ol>
-						<li>Imported the source CSV file containing <strong>51,290 sales lines and 21 columns</strong> into a staging query with disabled load, assigned appropriate data types and standardized field names</li>
+						<li>Imported and prepared the source dataset containing <strong>51,290 sales lines and 21 columns</strong>, standardized field names and assigned data types</li>
 						<li>Performed data quality checks, including the confirmation that the source contains no missing values or exact duplicates, all numeric and date values convert without errors, and no shipping date occurs before its order date</li>
-						<li>Created a continuous date dimension covering the full reporting period and grouped discount values into ordered analytical bands</li>
-						<li>Resolved reused source identifiers by identifying orders through Order ID + Order Date + Customer Name (25,754 orders) and products through Product ID + Product Name (10,768 product combinations), then assigned numeric OrderKey and ProductKey surrogate keys</li>
-						<li>Restructured the source file into DimOrder, DimProduct, and FactSales tables, hid technical fields from Report view, and built a data model with three active one-to-many relationships:
+						<li>Resolved ambiguous source identifiers by identifying orders through Order ID + Order Date + Customer Name and products through Product ID + Product Name, then assigned numeric OrderKey and ProductKey surrogate keys</li>
+						<li>Restructured the source file into DimOrder, DimProduct and FactSales tables and builded a data model with three active one-to-many relationships:
 							<ul><br>
 								<li>DimDate → DimOrder</li>
 								<li>DimOrder → FactSales</li>
 								<li>DimProduct → FactSales</li>
 							</ul>
 						</li>
-						<li>Retained 35 repeated order-product combinations and all negative profit values, because the dataset provides no reliable order-line identifier and negative profit represents a valid loss-making sales outcome</li>
 						<li><strong>Defined analytical concepts and rules underlying the key measures,</strong> such as sales line, order, profit margin, loss-making sales line, discount band, and eligible product</li>
-						<li><strong>Created more than 20 DAX measures</strong> covering core performance, previous-year comparisons, year-over-year changes, loss-making sales lines, and product ranking</li>
+						<li><strong>Created 20+ DAX measures</strong> covering core performance, previous-year comparisons, year-over-year changes, loss-making sales lines, and product ranking</li>
 						<li><strong>Developed a dynamic parameter</strong> for controlling the minimum number of sales lines required for a product to appear in the lowest-profit ranking</li>
 						<li><strong>Designed two interactive report pages:</strong>
 							<ul><br>
