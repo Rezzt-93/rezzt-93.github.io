@@ -82,7 +82,7 @@
 						<li>Imported and prepared the source dataset containing <strong>51,290 sales lines and 21 columns</strong>, standardized field names and assigned data types</li>
 						<li>Performed data quality checks, including the confirmation that the source contains no missing values or exact duplicates, all numeric and date values convert without errors, and no shipping date occurs before its order date</li>
 						<li>Resolved ambiguous source identifiers by identifying orders through Order ID + Order Date + Customer Name and products through Product ID + Product Name, then assigned numeric OrderKey and ProductKey surrogate keys</li>
-						<li>Restructured the source file into DimOrder, DimProduct and FactSales tables and builded a data model with three active one-to-many relationships:
+						<li>Restructured the source file into DimOrder, DimProduct and FactSales tables and built a data model with three active one-to-many relationships:
 							<ul><br>
 								<li>DimDate → DimOrder</li>
 								<li>DimOrder → FactSales</li>
